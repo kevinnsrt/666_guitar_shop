@@ -159,17 +159,24 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" pref="170" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel1" min="-2" pref="138" max="-2" attributes="0"/>
-                                      <Component id="nama_barang_field" min="-2" pref="650" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel1" min="-2" pref="138" max="-2" attributes="0"/>
+                                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="512" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jumlah_barang_field" alignment="1" min="-2" pref="650" max="-2" attributes="0"/>
-                                  <Component id="harga_barang_field" alignment="1" min="-2" pref="650" max="-2" attributes="0"/>
-                                  <Component id="deskripsi_barang_field" alignment="1" min="-2" pref="650" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="597" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jumlah_barang_field" alignment="1" min="-2" pref="626" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="nama_barang_field" alignment="0" min="-2" pref="626" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="harga_barang_field" alignment="1" min="-2" pref="626" max="-2" attributes="0"/>
+                                          <Component id="deskripsi_barang_field" alignment="1" min="-2" pref="626" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
