@@ -101,14 +101,14 @@ public class Pesanan extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "id_pesanan", "id", "nama_pesanan", "nama_user"
+                "ID Pesanan", "ID Barang", "Pesanan", "Nama User"
             }
         ));
         jScrollPane1.setViewportView(tbl_pesanan);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 1220, 570));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 1220, 640));
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 102));
+        jButton2.setBackground(new java.awt.Color(0, 153, 153));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Selesai");
@@ -118,11 +118,11 @@ public class Pesanan extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 110, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 790, 110, 50));
 
         sidebar.setBackground(new java.awt.Color(51, 51, 51));
 
-        pesananButton.setBackground(new java.awt.Color(51, 51, 51));
+        pesananButton.setBackground(new java.awt.Color(0, 102, 102));
         pesananButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         pesananButton.setForeground(new java.awt.Color(204, 204, 204));
         pesananButton.setText("Pesanan Masuk");
@@ -136,7 +136,7 @@ public class Pesanan extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("WELCOME ADMIN");
+        jLabel6.setText("DASHBOARD");
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -174,7 +174,7 @@ public class Pesanan extends javax.swing.JFrame {
                 .addComponent(pesananButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(813, Short.MAX_VALUE))
+                .addContainerGap(810, Short.MAX_VALUE))
         );
 
         getContentPane().add(sidebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 1080));

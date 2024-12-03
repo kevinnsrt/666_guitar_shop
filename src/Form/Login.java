@@ -93,15 +93,15 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("USERNAME");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 260, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 260, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("PASSWORD");
         jLabel2.setToolTipText("");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 220, 40));
-        getContentPane().add(username_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 210, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 220, 40));
+        getContentPane().add(username_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 280, 40));
 
         loginButton.setBackground(new java.awt.Color(51, 51, 51));
         loginButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -113,8 +113,8 @@ public class Login extends javax.swing.JFrame {
                 loginButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 180, 40));
-        getContentPane().add(password_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 210, 30));
+        getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 150, 40));
+        getContentPane().add(password_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 280, 40));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background Base.jpg"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-500, -200, 1030, 650));

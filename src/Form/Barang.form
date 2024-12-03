@@ -70,7 +70,7 @@
                   <Component id="pesananButton" min="-2" pref="51" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Component id="stockButton" min="-2" pref="51" max="-2" attributes="0"/>
-                  <EmptySpace pref="810" max="32767" attributes="0"/>
+                  <EmptySpace pref="813" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -97,7 +97,7 @@
         <Component class="javax.swing.JButton" name="stockButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="33" green="33" red="33" type="rgb"/>
+              <Color blue="66" green="66" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -121,7 +121,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="WELCOME ADMIN"/>
+            <Property name="text" type="java.lang.String" value="DASHBOARD"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -152,7 +152,7 @@
                           <Component id="cancel" min="-2" pref="90" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                           <Component id="jButton1" min="-2" pref="130" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="26" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -160,23 +160,21 @@
                               <Component id="jLabel3" min="-2" pref="170" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel2" min="-2" pref="138" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel1" min="-2" pref="138" max="-2" attributes="0"/>
-                                              <Component id="nama_barang_field" min="-2" pref="650" max="-2" attributes="0"/>
-                                              <Component id="jLabel4" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="jumlah_barang_field" alignment="1" min="-2" pref="650" max="-2" attributes="0"/>
-                                          <Component id="harga_barang_field" alignment="1" min="-2" pref="650" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="jLabel1" min="-2" pref="138" max="-2" attributes="0"/>
+                                      <Component id="nama_barang_field" min="-2" pref="650" max="-2" attributes="0"/>
+                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="jumlah_barang_field" alignment="1" min="-2" pref="650" max="-2" attributes="0"/>
+                                  <Component id="harga_barang_field" alignment="1" min="-2" pref="650" max="-2" attributes="0"/>
                                   <Component id="deskripsi_barang_field" alignment="1" min="-2" pref="650" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="597" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jScrollPane1" min="-2" pref="570" max="-2" attributes="0"/>
@@ -199,21 +197,21 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="nama_barang_field" min="-2" pref="50" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="jumlah_barang_field" min="-2" pref="50" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="harga_barang_field" min="-2" pref="50" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                           <Component id="deskripsi_barang_field" min="-2" pref="50" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -226,10 +224,12 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="search_field" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="searchButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="resetButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="searchButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="resetButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="580" max="-2" attributes="0"/>
@@ -270,7 +270,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Jumlah Barang"/>
+            <Property name="text" type="java.lang.String" value="Jumlah"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="harga_barang_field">
@@ -283,7 +283,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Harga Barang"/>
+            <Property name="text" type="java.lang.String" value="Harga"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="deskripsi_barang_field">
@@ -333,7 +333,7 @@
         <Component class="javax.swing.JButton" name="searchButton">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="0" green="66" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
@@ -369,7 +369,7 @@
         <Component class="javax.swing.JButton" name="create">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="0" green="66" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
@@ -387,7 +387,7 @@
         <Component class="javax.swing.JButton" name="update">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="ff" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -405,7 +405,7 @@
         <Component class="javax.swing.JButton" name="delete">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="0" green="66" red="cc" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
@@ -441,7 +441,7 @@
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="0" green="66" red="0" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
@@ -464,7 +464,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Deskripsi Barang"/>
+            <Property name="text" type="java.lang.String" value="Deskripsi"/>
           </Properties>
         </Component>
       </SubComponents>

@@ -55,9 +55,9 @@ public class LoginUser extends javax.swing.JFrame {
                 username_fieldActionPerformed(evt);
             }
         });
-        getContentPane().add(username_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 310, 40));
+        getContentPane().add(username_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 300, 40));
 
-        registerButton.setBackground(new java.awt.Color(153, 0, 255));
+        registerButton.setBackground(new java.awt.Color(0, 204, 0));
         registerButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         registerButton.setForeground(new java.awt.Color(255, 255, 255));
         registerButton.setText("REGISTER");
@@ -67,9 +67,9 @@ public class LoginUser extends javax.swing.JFrame {
                 registerButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, 120, 40));
+        getContentPane().add(registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 120, 40));
 
-        loginButton.setBackground(new java.awt.Color(0, 204, 0));
+        loginButton.setBackground(new java.awt.Color(153, 0, 255));
         loginButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         loginButton.setForeground(new java.awt.Color(255, 255, 255));
         loginButton.setText("LOGIN");
@@ -79,7 +79,7 @@ public class LoginUser extends javax.swing.JFrame {
                 loginButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 120, 40));
+        getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 120, 40));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
