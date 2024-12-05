@@ -45,11 +45,13 @@ public class LoginUser extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("WELCOME TO 666 GUITAR SHOP");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 440, 50));
 
+        username_field.setBackground(new java.awt.Color(179, 137, 124));
+        username_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        username_field.setForeground(new java.awt.Color(255, 255, 255));
         username_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 username_fieldActionPerformed(evt);
@@ -69,7 +71,7 @@ public class LoginUser extends javax.swing.JFrame {
         });
         getContentPane().add(registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 120, 40));
 
-        loginButton.setBackground(new java.awt.Color(153, 0, 255));
+        loginButton.setBackground(new java.awt.Color(255, 0, 0));
         loginButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         loginButton.setForeground(new java.awt.Color(255, 255, 255));
         loginButton.setText("LOGIN");
@@ -82,18 +84,20 @@ public class LoginUser extends javax.swing.JFrame {
         getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 120, 40));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("PASSWORD");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 130, 20));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 90, 20));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("USERNAME");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 130, 20));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 80, 20));
+
+        password_field.setBackground(new java.awt.Color(179, 137, 124));
+        password_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        password_field.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(password_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 300, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Desain tanpa judul (5).jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 419));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/a7x.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 420));
 
         pack();
         setLocationRelativeTo(null);
@@ -144,9 +148,7 @@ public class LoginUser extends javax.swing.JFrame {
             psInsert.setString(1, username);
             psInsert.setString(2, password);
             psInsert.executeUpdate();
-            JOptionPane.showMessageDialog(this, "Registrasi berhasil!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
-            new DashboardUser().setVisible(true);
-            dispose();
+            JOptionPane.showMessageDialog(this, "Registrasi berhasil!, Harap  Login Kembali", "Sukses", JOptionPane.INFORMATION_MESSAGE); 
         }
     } catch (Exception ex) {
         ex.printStackTrace();

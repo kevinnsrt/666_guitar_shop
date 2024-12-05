@@ -74,7 +74,6 @@ public class Barang extends javax.swing.JFrame {
             String nama_barang = rs.getString("nama_barang");
             int harga_barang = rs.getInt("harga_barang");
             String deskripsi_barang = rs.getString("deskripsi_barang");
-            int jumlah_barang = rs.getInt("jumlah_barang");
             byte[] gambarBytes = rs.getBytes("gambar");
 
             ImageIcon gambar = null;
@@ -84,7 +83,7 @@ public class Barang extends javax.swing.JFrame {
                 gambar = new ImageIcon(scaledImage);
             }
 
-            Object[] rowData = {id, nama_barang, harga_barang, deskripsi_barang, jumlah_barang, gambar};
+            Object[] rowData = {id, nama_barang, harga_barang, deskripsi_barang, gambar};
             model.addRow(rowData);
         }
 
@@ -113,8 +112,6 @@ public class Barang extends javax.swing.JFrame {
         stockPanel = new javax.swing.JPanel();
         nama_barang_field = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jumlah_barang_field = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         harga_barang_field = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         deskripsi_barang_field = new javax.swing.JTextField();
@@ -206,16 +203,6 @@ public class Barang extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nama Barang");
 
-        jumlah_barang_field.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jumlah_barang_fieldActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Jumlah");
-
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Harga");
@@ -229,12 +216,12 @@ public class Barang extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "id", "nama_barang", "harga_barang", "deskripsi_barang", "jumlah_barang", "gambar"
+                "id", "nama_barang", "harga_barang", "deskripsi_barang", "gambar"
             }
         ) {
             @Override
             public Class<?> getColumnClass(int column) {
-                if (column == 5) { // Kolom ke-6 untuk gambar
+                if (column == 4) { // Kolom ke-6 untuk gambar
                     return ImageIcon.class;
                 }
                 return Object.class;
@@ -357,13 +344,10 @@ public class Barang extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(stockPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, stockPanelLayout.createSequentialGroup()
-                                    .addGroup(stockPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel4))
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(512, 512, 512))
                                 .addGroup(stockPanelLayout.createSequentialGroup()
                                     .addGroup(stockPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jumlah_barang_field, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(stockPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel2)
                                             .addComponent(nama_barang_field, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -391,15 +375,11 @@ public class Barang extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(nama_barang_field, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jumlah_barang_field, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
+                        .addGap(71, 71, 71)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(harga_barang_field, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(82, 82, 82)
                         .addComponent(jLabel3)
                         .addGap(4, 4, 4)
                         .addComponent(deskripsi_barang_field, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -424,7 +404,7 @@ public class Barang extends javax.swing.JFrame {
 
         getContentPane().add(stockPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 1270, 730));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background Base.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/backgrouund_hero.jpg"))); // NOI18N
         background.setOpaque(true);
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-200, -120, 1920, 1130));
 
@@ -463,37 +443,27 @@ public class Barang extends javax.swing.JFrame {
         nama_barang_field.setText("");
         harga_barang_field.setText("");
         deskripsi_barang_field.setText("");
-        jumlah_barang_field.setText("");
-
-
     }
     
     
     private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
     String nama_barang = nama_barang_field.getText().trim();
     String harga_barang_text = harga_barang_field.getText().trim();
-    String jumlah_barang_text = jumlah_barang_field.getText().trim();
     String deskripsi_barang = deskripsi_barang_field.getText().trim();
 
     // Validasi input kosong
-    if (nama_barang.isEmpty() || harga_barang_text.isEmpty() || jumlah_barang_text.isEmpty() || deskripsi_barang.isEmpty()) {
+    if (nama_barang.isEmpty() || harga_barang_text.isEmpty() || deskripsi_barang.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Semua field harus diisi!", "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
 
     // Validasi input angka
     int harga_barang;
-    int jumlah_barang;
     try {
         harga_barang = Integer.parseInt(harga_barang_text);
-        jumlah_barang = Integer.parseInt(jumlah_barang_text);
 
-        if (harga_barang <= 0 || jumlah_barang <= 0) {
-            JOptionPane.showMessageDialog(this, "Harga dan jumlah harus bernilai positif!", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
     } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Harga dan jumlah harus berupa angka!", "Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Harga berupa angka!", "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
 
@@ -510,7 +480,7 @@ public class Barang extends javax.swing.JFrame {
     }
 
     // Query untuk menyimpan data ke database
-    String query = "INSERT INTO barang(nama_barang, harga_barang, deskripsi_barang, jumlah_barang, gambar) VALUES (?, ?, ?, ?, ?)";
+    String query = "INSERT INTO barang(nama_barang, harga_barang, deskripsi_barang,gambar) VALUES (?, ?, ?, ?)";
 
     try (PreparedStatement ps = conn.prepareStatement(query);
          FileInputStream fis = new FileInputStream(selectedImageFile)) {
@@ -519,8 +489,7 @@ public class Barang extends javax.swing.JFrame {
         ps.setString(1, nama_barang);
         ps.setInt(2, harga_barang);
         ps.setString(3, deskripsi_barang);
-        ps.setInt(4, jumlah_barang);
-        ps.setBinaryStream(5, fis, (int) selectedImageFile.length());
+        ps.setBinaryStream(4, fis, (int) selectedImageFile.length());
 
         // Eksekusi query
         ps.executeUpdate();
@@ -543,10 +512,9 @@ public class Barang extends javax.swing.JFrame {
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
     String nama_barang = nama_barang_field.getText().trim();
     String harga_barang_text = harga_barang_field.getText().trim();
-    String jumlah_barang_text = jumlah_barang_field.getText().trim();
     String deskripsi_barang = deskripsi_barang_field.getText().trim();
 
-    if (nama_barang.isEmpty() || harga_barang_text.isEmpty() || jumlah_barang_text.isEmpty() || deskripsi_barang.isEmpty()) {
+    if (nama_barang.isEmpty() || harga_barang_text.isEmpty() ||deskripsi_barang.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Semua field harus diisi!", "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
@@ -555,12 +523,7 @@ public class Barang extends javax.swing.JFrame {
     int jumlah_barang;
     try {
         harga_barang = Integer.parseInt(harga_barang_text);
-        jumlah_barang = Integer.parseInt(jumlah_barang_text);
 
-        if (harga_barang <= 0 || jumlah_barang <= 0) {
-            JOptionPane.showMessageDialog(this, "Harga dan jumlah harus bernilai positif!", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
     } catch (NumberFormatException e) {
         JOptionPane.showMessageDialog(this, "Harga dan jumlah harus berupa angka!", "Error", JOptionPane.ERROR_MESSAGE);
         return;
@@ -594,20 +557,19 @@ public class Barang extends javax.swing.JFrame {
     int id_barang = (int) tbl_data.getValueAt(selectedRow, 0); // ID Barang ada di kolom pertama
 
     // Query untuk update data
-    String query = "UPDATE barang SET nama_barang = ?, harga_barang = ?, deskripsi_barang = ?, jumlah_barang = ?, gambar = ? WHERE id = ?";
+    String query = "UPDATE barang SET nama_barang = ?, harga_barang = ?, deskripsi_barang = ?, gambar = ? WHERE id = ?";
     try (PreparedStatement ps = conn.prepareStatement(query)) {
         ps.setString(1, nama_barang);
         ps.setInt(2, harga_barang);
         ps.setString(3, deskripsi_barang);
-        ps.setInt(4, jumlah_barang);
         
         if (imageBytes != null) {
-            ps.setBytes(5, imageBytes); // Set image bytes only if an image is provided
+            ps.setBytes(4, imageBytes); // Set image bytes only if an image is provided
         } else {
-            ps.setNull(5, java.sql.Types.BINARY); // Set NULL if no image is provided
+            ps.setNull(4, java.sql.Types.BINARY); // Set NULL if no image is provided
         }
         
-        ps.setInt(6, id_barang);
+        ps.setInt(5, id_barang);
         ps.executeUpdate();
 
         // Notifikasi sukses
@@ -645,10 +607,6 @@ public class Barang extends javax.swing.JFrame {
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         resetForm(); 
     }//GEN-LAST:event_cancelActionPerformed
-
-    private void jumlah_barang_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jumlah_barang_fieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jumlah_barang_fieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JFileChooser j = new JFileChooser();
@@ -693,7 +651,6 @@ public class Barang extends javax.swing.JFrame {
                 String nama_barang = rs.getString("nama_barang");
                 int harga_barang = rs.getInt("harga_barang");
                 String deskripsi_barang = rs.getString("deskripsi_barang");
-                int jumlah_barang = rs.getInt("jumlah_barang");
 
                 // Ambil gambar dari BLOB (misalnya gambar disimpan di kolom "gambar")
                 Blob imageBlob = (Blob) rs.getBlob("gambar");
@@ -712,7 +669,7 @@ public class Barang extends javax.swing.JFrame {
                 }
 
                 // Menambahkan baris ke tabel dengan gambar
-                model.addRow(new Object[]{id_barang, nama_barang, harga_barang, deskripsi_barang, jumlah_barang, imageIcon});
+                model.addRow(new Object[]{id_barang, nama_barang, harga_barang, deskripsi_barang, imageIcon});
             }
 
             // Menutup result set setelah penggunaan
@@ -785,10 +742,8 @@ public class Barang extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jumlah_barang_field;
     private javax.swing.JTextField nama_barang_field;
     private javax.swing.JButton pesananButton;
     private javax.swing.JButton resetButton;

@@ -179,7 +179,7 @@ public class Pesanan extends javax.swing.JFrame {
 
         getContentPane().add(sidebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 1080));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background Base.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/backgrouund_hero.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 0, -1, 920));
 
         pack();

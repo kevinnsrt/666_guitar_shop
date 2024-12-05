@@ -89,6 +89,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setToolTipText("");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 480, 40));
 
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -101,9 +102,13 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setText("PASSWORD");
         jLabel2.setToolTipText("");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 220, 40));
+
+        username_field.setBackground(new java.awt.Color(179, 137, 124));
+        username_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        username_field.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(username_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 280, 40));
 
-        loginButton.setBackground(new java.awt.Color(51, 51, 51));
+        loginButton.setBackground(new java.awt.Color(179, 137, 124));
         loginButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         loginButton.setForeground(new java.awt.Color(255, 255, 255));
         loginButton.setText("Login");
@@ -114,10 +119,14 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 150, 40));
+
+        password_field.setBackground(new java.awt.Color(179, 137, 124));
+        password_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        password_field.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(password_field, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 280, 40));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background Base.jpg"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-500, -200, 1030, 650));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/backgrouund_hero.jpg"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-710, 0, 1210, 420));
 
         pack();
         setLocationRelativeTo(null);

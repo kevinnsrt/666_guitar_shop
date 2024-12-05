@@ -120,7 +120,7 @@ private Connection conn;
         tbl_data.setRowHeight(100);
         jScrollPane1.setViewportView(tbl_data);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 960, 550));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 960, 550));
 
         sidebar.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -174,13 +174,13 @@ private Connection conn;
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(buttonPesan, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(850, Short.MAX_VALUE))
+                .addContainerGap(853, Short.MAX_VALUE))
         );
 
         getContentPane().add(sidebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 1080));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background Dashboard.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1360, 670));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/a7x.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-520, -140, 2060, 1030));
 
         pack();
         setLocationRelativeTo(null);
