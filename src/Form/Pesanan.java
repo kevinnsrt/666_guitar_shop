@@ -87,6 +87,9 @@ public class Pesanan extends javax.swing.JFrame {
         pesananButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        pesananButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -150,6 +153,29 @@ public class Pesanan extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(51, 51, 51));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(204, 204, 204));
+        jButton3.setText("Riwayat Pesanan");
+        jButton3.setBorderPainted(false);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        pesananButton2.setBackground(new java.awt.Color(51, 51, 51));
+        pesananButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pesananButton2.setForeground(new java.awt.Color(204, 204, 204));
+        pesananButton2.setText("Daftar Users");
+        pesananButton2.setBorderPainted(false);
+        pesananButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pesananButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
         sidebar.setLayout(sidebarLayout);
         sidebarLayout.setHorizontalGroup(
@@ -162,7 +188,9 @@ public class Pesanan extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pesananButton, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
+                    .addComponent(pesananButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pesananButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sidebarLayout.setVerticalGroup(
@@ -174,10 +202,20 @@ public class Pesanan extends javax.swing.JFrame {
                 .addComponent(pesananButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(810, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(pesananButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(630, Short.MAX_VALUE))
         );
 
         getContentPane().add(sidebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 1080));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Pesanan ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 16, 980, 60));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/backgrouund_hero.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 0, -1, 920));
@@ -195,11 +233,28 @@ public class Pesanan extends javax.swing.JFrame {
        int selectedRow = tbl_pesanan.getSelectedRow();
 if (selectedRow != -1) {
     int id_pesanan = (int) tbl_pesanan.getValueAt(selectedRow, 0); 
-    int id = (int) tbl_pesanan.getValueAt(selectedRow, 1); // Misalnya kolom kedua untuk ID barang
+    int id = (int) tbl_pesanan.getValueAt(selectedRow, 1); 
 
     try {
         // Mulai transaksi
         conn.setAutoCommit(false);
+        
+        int id_barang = (int) tbl_pesanan.getValueAt(selectedRow, 1);
+        String nama_pesanan = (String) tbl_pesanan.getValueAt(selectedRow, 2);
+        String nama_user = (String) tbl_pesanan.getValueAt(selectedRow, 3);
+        
+        //Move to History Pesanan
+        String HistoryPesananQuery = "INSERT INTO history_pesanan (id_history_pesanan, id_barang, pesanan ,nama_user) VALUES (?,?, ?, ?)";
+        try (PreparedStatement ps = conn.prepareStatement(HistoryPesananQuery)) {
+        ps.setInt(1, id_pesanan); // ID barang
+        ps.setInt(2, id_barang); // ID barang
+        ps.setString(3, nama_pesanan); // Nama pesanan
+        ps.setString(4, nama_user); // Nama user
+
+        // Eksekusi query
+        ps.executeUpdate();
+        }
+        
         // Hapus dari tabel pesanan
         String deletePesananQuery = "DELETE FROM pesanan WHERE id_pesanan = ?";
         try (PreparedStatement psPesanan = conn.prepareStatement(deletePesananQuery)) {
@@ -207,12 +262,35 @@ if (selectedRow != -1) {
             psPesanan.executeUpdate();
         }
 
-        // Hapus dari tabel barang
-        String deleteBarangQuery = "DELETE FROM barang WHERE id = ?";
-        try (PreparedStatement psBarang = conn.prepareStatement(deleteBarangQuery)) {
-            psBarang.setInt(1, id);
-            psBarang.executeUpdate();
+        // Kurangi jumlah_barang di tabel barang
+        String updateBarangQuery = "UPDATE barang SET jumlah_barang = jumlah_barang - 1 WHERE id = ? AND jumlah_barang > 0";
+        String deleteBarangQuery = "DELETE FROM barang WHERE id = ? AND jumlah_barang = 0";
+
+        try (PreparedStatement psUpdate = conn.prepareStatement(updateBarangQuery);
+        PreparedStatement psDelete = conn.prepareStatement(deleteBarangQuery)) {
+
+        // Kurangi jumlah_barang
+        psUpdate.setInt(1, id);
+        int rowsUpdated = psUpdate.executeUpdate();
+
+        if (rowsUpdated > 0) {
+        System.out.println("Jumlah barang berhasil dikurangi.");
+
+        // Hapus barang jika jumlah_barang menjadi 0
+        psDelete.setInt(1, id);
+        int rowsDeleted = psDelete.executeUpdate();
+
+        if (rowsDeleted > 0) {
+            System.out.println("Barang telah dihapus karena stok habis.");
         }
+        } else {
+        System.out.println("Barang tidak tersedia atau stok habis.");
+        }
+        } catch (SQLException e) {
+        e.printStackTrace();
+        }
+
+
 
         // Commit transaksi
         conn.commit();
@@ -234,6 +312,16 @@ if (selectedRow != -1) {
         new Pesanan().setVisible(true);
         dispose();
     }//GEN-LAST:event_pesananButtonActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new HistoryPesanan().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void pesananButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesananButton2ActionPerformed
+        new Users().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_pesananButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,10 +361,13 @@ if (selectedRow != -1) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton pesananButton;
+    private javax.swing.JButton pesananButton2;
     private javax.swing.JPanel sidebar;
     private javax.swing.JTable tbl_pesanan;
     // End of variables declaration//GEN-END:variables

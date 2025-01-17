@@ -57,8 +57,8 @@ private Connection conn;
             String nama_barang = rs.getString("nama_barang");
             int harga_barang = rs.getInt("harga_barang");
             String deskripsi_barang = rs.getString("deskripsi_barang");
+            int jumlah_barang = rs.getInt("jumlah_barang");
             byte[] gambarBytes = rs.getBytes("gambar");
-
             ImageIcon gambar = null;
             if (gambarBytes != null) {
                 gambar = new ImageIcon(gambarBytes);
@@ -66,7 +66,7 @@ private Connection conn;
                 gambar = new ImageIcon(scaledImage);
             }
 
-            Object[] rowData = {id, nama_barang, harga_barang, deskripsi_barang, gambar};
+            Object[] rowData = {id, nama_barang, harga_barang, deskripsi_barang, gambar,jumlah_barang};
             model.addRow(rowData);
         }
 
@@ -93,6 +93,7 @@ private Connection conn;
         labelWelcome = new javax.swing.JLabel();
         buttonPesan = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        stockButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,12 +107,12 @@ private Connection conn;
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "id_barang","nama_barang", "harga_barang", "deskripsi_barang","gambar"
+                "id_barang","nama_barang", "harga_barang", "deskripsi_barang","gambar","jumlah_barang"
             }
         ) {
             @Override
             public Class<?> getColumnClass(int column) {
-                if (column == 4) { // Kolom ke-6 untuk gambar
+                if (column == 4) {
                     return ImageIcon.class;
                 }
                 return Object.class;
@@ -150,20 +151,35 @@ private Connection conn;
             }
         });
 
+        stockButton.setBackground(new java.awt.Color(153, 0, 0));
+        stockButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        stockButton.setForeground(new java.awt.Color(204, 204, 204));
+        stockButton.setText("Logout");
+        stockButton.setBorderPainted(false);
+        stockButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stockButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout sidebarLayout = new javax.swing.GroupLayout(sidebar);
         sidebar.setLayout(sidebarLayout);
         sidebarLayout.setHorizontalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(15, 15, 15))
             .addGroup(sidebarLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
                     .addComponent(buttonPesan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sidebarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(15, 15, 15))
+                .addContainerGap(52, Short.MAX_VALUE)
+                .addComponent(stockButton, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
         );
         sidebarLayout.setVerticalGroup(
             sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +190,9 @@ private Connection conn;
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(buttonPesan, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(853, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 460, Short.MAX_VALUE)
+                .addComponent(stockButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(342, 342, 342))
         );
 
         getContentPane().add(sidebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 1080));
@@ -221,6 +239,10 @@ private Connection conn;
         getData();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void stockButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockButtonActionPerformed
+        dispose();
+    }//GEN-LAST:event_stockButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -263,6 +285,7 @@ private Connection conn;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelWelcome;
     private javax.swing.JPanel sidebar;
+    private javax.swing.JButton stockButton;
     private javax.swing.JTable tbl_data;
     // End of variables declaration//GEN-END:variables
 }
